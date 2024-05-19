@@ -1,0 +1,49 @@
+
+
+
+#landingcontent{
+    text-align: center;
+}
+#pomodoro{
+    text-align: center;
+    font-size: x-large;
+}
+#what-to-use{
+    text-align: center;
+    font-style:italic;
+}
+#content{
+ 
+    text-align: center;
+}
+
+#timer{
+    color: white;
+    background-color: blue;
+    margin-left: 47%;
+    padding: 10px 20px;
+    border-radius: none;
+}
+body{
+    background-color: #b4cdd0;
+}
+#landingimage{
+    margin-left: 40%;
+}
+
+
+@media (max-width: 767px) {
+    
+    #timer {
+        margin-left: auto; 
+        margin-right: auto; 
+    }
+
+    #landingimage,
+    #pomodoro,
+    #what-to-use,
+    #content {
+        margin-left: auto; 
+        margin-right: auto; 
+    }
+}
