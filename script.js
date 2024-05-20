@@ -16,7 +16,7 @@ progressCircle.style.strokeDashoffset = circumference;
 document.getElementById('start-pause').addEventListener('click', toggleTimer);
 document
   .getElementById('short-break')
-  .addEventListener('click', startShortBhttps://github.com/ndutta-cynthia/Pomodoro-Timer.gitreak);
+  .addEventListener('click', startShortBreak);
 document.getElementById('work-timer').addEventListener('click', startWorkTimer);
 document.getElementById('settings-button').addEventListener('click', openModal);
 document.querySelector('.close-button').addEventListener('click', closeModal);
@@ -79,7 +79,6 @@ function startShortBreak() {
     highlightCurrentMode();
   }
 }
-
 function startWorkTimer() {
   if (!isRunning || !isWorkTime) {
     pauseTimer();

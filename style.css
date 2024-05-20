@@ -3,17 +3,30 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
+    /* height: 100vh;
+    margin: 0; */
     transition: background-color 0.3s, color 0.3s;
+    font-size: 80px;
+    margin-top: 60px;
+
+  }
+  .header{
+    text-shadow:   7px 7px 7px grey,
+    2px 2px 1px white;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-style:oblique;
   }
   body.dark {
-    background-color: #100c08;
+    background-image: url("background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
     color: #f2f3f4;
   }
   body.light {
-    background-color: #f2f3f4;
-    color: #100c08;
+    background-image: url("lightbackground.jpg");
+    background-repeat:no-repeat;
+    background-size:cover ;
+    color: black;
   }
   .container {
     text-align: center;
@@ -29,11 +42,11 @@ body {
     margin: 0;
     margin-bottom: 4rem;
     font-size: 28px;
-    color: #4ad0e1;
+    /* color: #191714 ; */
   }
   header .header-icons {
     display: flex;
-    gap: 10px;
+    gap: 47px;
   }
   .header-icons button {
     background-color: transparent;
@@ -62,8 +75,8 @@ body {
   }
   .circle {
     position: relative;
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -71,6 +84,7 @@ body {
   .progress-ring {
     transform: rotate(-90deg);
     position: absolute;
+    /* color:grey; */
   }
   .progress-ring__circle {
     transition: 0.35s stroke-dashoffset;
@@ -108,7 +122,7 @@ body {
     transition: color 0.3s;
   }
   .options button.active {
-    color: #4dd0e1;
+    color:lightseagreen;
   }
   .options button i {
     font-size: 32px;
@@ -200,6 +214,10 @@ body {
   body.light .time-settings label {
     color: #1c1c1c;
   }
+
+
+
+
   @media (max-width: 600px) {
     .container {
       width: 100%;
@@ -211,4 +229,8 @@ body {
     .buttons {
       margin-bottom: 10px;
     }
+    .header{
+      font-size: 30px;
+    }
   }
+  
