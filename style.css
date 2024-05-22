@@ -3,18 +3,15 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* height: 100vh;
-    margin: 0; */
     transition: background-color 0.3s, color 0.3s;
-    font-size: 80px;
+    font-size: 50px;
     margin-top: 60px;
 
   }
   .header{
-    text-shadow:   7px 7px 7px grey,
+    text-shadow: 7px 7px 7px grey,
     2px 2px 1px white;
-    font-family: 'Comic Sans MS', cursive, sans-serif;
-    font-style:oblique;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, cursive;
   }
   body.dark {
     background-image: url("background.jpg");
@@ -27,6 +24,9 @@ body {
     background-repeat:no-repeat;
     background-size:cover ;
     color: black;
+    background-color:black;
+    color: yellow;
+
   }
   .container {
     text-align: center;
@@ -35,18 +35,17 @@ body {
   }
   header {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
   }
   header h1 {
     margin: 0;
     margin-bottom: 4rem;
     font-size: 28px;
-    /* color: #191714 ; */
   }
   header .header-icons {
     display: flex;
-    gap: 47px;
+    gap: 5px;
   }
   .header-icons button {
     background-color: transparent;
@@ -56,17 +55,25 @@ body {
     cursor: pointer;
     margin: 2rem;
   }
+  .settings-label{
+    font-size: 24px;
+    color: inherit;
+    margin-top: 60px;
+    margin-left: -90px;
+    position: absolute;
+  }
   #theme-toggle {
-    position: fixed;
+    position: absolute;
     top: 10px;
     right: 10px;
-    background-color: #333;
-    color: #f2f3f4;
+    background-color:black;
+    color:white;
     border-radius: 50%;
     padding: 10px;
     cursor: pointer;
     z-index: 1000;
   }
+
   #timer {
     display: flex;
     justify-content: center;
@@ -128,6 +135,7 @@ body {
     font-size: 32px;
     margin-bottom: 5px;
   }
+ 
   .modal {
     display: none;
     position: fixed;

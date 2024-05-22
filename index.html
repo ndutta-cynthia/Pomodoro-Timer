@@ -15,7 +15,7 @@
         <div id="timer">
             <div class="circle">
                 <svg class="progress-ring" width="200" height="200">
-                    <circle class="progress-ring__circle" stroke="#2234AE" stroke-width="10" fill="transparent" r="90"
+                    <circle class="progress-ring__circle" stroke="#00FFFF" stroke-width="10" fill="transparent" r="90"
                         cx="100" cy="100" />
                 </svg>
                 <span id="time">25:00</span>
@@ -26,10 +26,11 @@
         </div>
         <div class="options">
             <button id="work-timer" class="active"><i class="fas fa-briefcase"></i><br>Work</button>
-            <button id="short-break"><i class="fas fa-home"></i><br>Short break</button>
+            <button id="short-break"><i class="fas fa-smile"></i><br>Short break</button>
         </div>
         <div class="header-icons">
-            <button id="settings-button"><i class="fas fa-cog"></i></button>
+            <button id="settings-button"><i class="fas fa-cog"></i><br></button>
+            <span class="settings-label"> Set Timer </span>
         </div>
     </div>
     <!-- Modal Structure -->
@@ -40,9 +41,19 @@
             <div class="time-settings">
                 <label for="work-time">Work</label>
                 <select id="work-time">
+                    <option value="1">1</option>
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                    <option value="20">20</option>
                     <option value="25">25</option>
                     <option value="30">30</option>
                     <option value="35">35</option>
+                    <option value="40">40</option>
+                    <option value="45">45</option>
+                    <option value="50">50</option>
+                    <option value="55">55</option>
+                    <option value="60">60</option>
                 </select>
                 <label for="break-time">Short break</label>
                 <select id="break-time">
@@ -50,6 +61,15 @@
                     <option value="5">5</option>
                     <option value="10">10</option>
                     <option value="15">15</option>
+                    <option value="20">20</option>
+                    <option value="25">25</option>
+                    <option value="30">30</option>
+                    <option value="35">35</option>
+                    <option value="40">40</option>
+                    <option value="45">45</option>
+                    <option value="50">50</option>
+                    <option value="55">55</option>
+                    <option value="60">60</option>
                 </select>
             </div>
             <button id="save-settings"><i class="fas fa-check"></i></button>
