@@ -1,9 +1,13 @@
 let workMinutes = localStorage.getItem('workMinutes')
   ? parseInt(localStorage.getItem('workMinutes'))
   : 25;
+
+
 let breakMinutes = localStorage.getItem('breakMinutes')
   ? parseInt(localStorage.getItem('breakMinutes'))
   : 5;
+
+  
 let isRunning = false;
 let isWorkTime = true;
 let remainingSeconds = workMinutes * 60;
