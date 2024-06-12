@@ -1,244 +1,428 @@
 body {
-    font-family: 'Comic Sans MS', cursive, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: background-color 0.3s, color 0.3s;
-    font-size: 50px;
-    margin-top: 60px;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  transition: background-color 0.3s, color 0.3s;
+  font-size: 30px;
+  margin: 0;
+  /* margin-top: 60px; */
+  min-height: 100vh; 
+}
 
-  }
-  .header{
-    text-shadow: 7px 7px 7px grey,
-    2px 2px 1px white;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, cursive;
-  }
-  body.dark {
-    background-image: url("background.jpg");
+.header {
+  text-shadow: 7px 7px 7px grey, 2px 2px 1px white;
+  font-family: 'Rubik Mono One', sans-serif;
+  font-size: 3rem;
+  text-align: center;
+  margin-top: 60px;
+}
+
+body.dark {
+  /* background-color: rgb(4, 4, 83); */
+  background-image: url('photo-1642173196511-37bc10e88d79.avif');
+  color: #f2f3f4;
+  /* box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.5); */
+  /* background-repeat: no-repeat;
+  background-size: cover;  */
+}
+
+body.light {
+  /* background-color: white; */
+  background-image: url('lightbackground.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    color: #f2f3f4;
-    background-position: center;
-  }
-  body.light {
-    background-image: url("lightbackground.jpg");
-    background-repeat:no-repeat;
-    background-size:cover ;
+    height: 100vh; 
     color: black;
-    background-color:black;
+    position:relative;
+}
 
-  }
-  .container {
-    text-align: center;
-    max-width: 50%;
-    position: relative;
-  }
-  header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  header h1 {
-    margin: 0;
-    margin-bottom: 4rem;
-    font-size: 28px;
-  }
-  header .header-icons {
-    display: flex;
-    gap: 5px;
-  }
-  .header-icons button {
-    background-color: transparent;
-    border: none;
-    color: inherit;
-    font-size: 24px;
-    cursor: pointer;
-    margin: 2rem;
-  }
-  .settings-label{
-    font-size: 24px;
-    color: inherit;
-    margin-top: 60px;
-    margin-left: -90px;
-    position: absolute;
-  }
-  #theme-toggle {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color:black;
-    color:white;
-    border-radius: 50%;
-    padding: 10px;
-    cursor: pointer;
-    z-index: 1000;
+
+.container {
+  text-align: center;
+  max-width: 50%;
+  position: relative;
+  margin-bottom: 60px;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header .header-icons {
+  display: flex;
+  gap: 5px;
+}
+
+.header-icons button {
+  background-color: transparent;
+  border: none;
+  color: inherit;
+  font-size: 24px;
+  cursor: pointer;
+  margin: 2rem;
+}
+
+.settings-label {
+  font-size: 24px;
+  color: inherit;
+  margin-top: 60px;
+  margin-left: -90px;
+  position: absolute;
+}
+
+#theme-toggle {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: black;
+  color: white;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+#timer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.circle {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  /* /* border-radius: 50%;
+  border: 10 px dashed #4dd0e1; */
+}
+
+.progress-ring {
+  transform: rotate(-90deg);
+  transform-origin: center;
+}
+
+.progress-ring__circle {
+  stroke: url(#GradientCircle);
+  stroke-width: 20;
+  transition: stroke-dashoffset 0.35s ease-out;
+  stroke-dasharray: 1188;
+  stroke-dashoffset: 0;
+}
+
+#time {
+  font-size: 48px;
+  position: absolute;
+  color: inherit;
+}
+
+.timer-label {
+  font-size: 16px;
+  color: #4dd0e1;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  gap: 5px;
+}
+
+.buttons button {
+  background-color: transparent;
+  border: none;
+  color: inherit;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.options {
+  display: flex;
+  gap: 55%;
+  margin-right: -20px;
+  position: relative;
+}
+
+.options button {
+  background-color: transparent;
+  border: none;
+  color: inherit;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+#settings-button {
+  background-color: transparent;
+  border: none;
+  color: inherit;
+  font-size: 24px;
+  text-align:center;
+  cursor: pointer;
+  transition: color 0.3s;
+  gap: 8px;
+
+}
+
+.options button.active {
+  color: lightseagreen;
+}
+
+.options button i {
+  font-size: 32px;
+  margin-bottom: 5px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+  background-color: #1e1e1e;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 400px;
+  border-radius: 8px;
+  text-align: left;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#save-settings{
+  margin-top: 20px;
+  color: blue;
+
+}
+#save-settings:hover{
+  color: green;
+}
+#save-settings-active{
+  color: green;
+}
+
+.close-button {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close-button:hover {
+  color: #f2f3f4;
+}
+
+.modal h2 {
+  font-size: 20px;
+  margin-top: 0;
+  color: inherit;
+}
+
+.time-settings {
+  display: flex;
+}
+
+@media (max-width: 479px) {
+  body {
+    font-size: 18px;
   }
 
-  #timer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
+  .header {
+    font-size: 1.5rem;
+    margin-top: 20px;
   }
+
   .circle {
-    position: relative;
-    width: 300px;
-    height: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 250px;
+    height: 250px;
   }
-  .progress-ring {
-    transform: rotate(-90deg);
-    position: absolute;
-    /* color:grey; */
-  }
-  .progress-ring__circle {
-    transition: 0.35s stroke-dashoffset;
-    transform: rotate(-90deg);
-    transform-origin: 50% 50%;
-  }
+
   #time {
-    font-size: 48px;
-    position: absolute;
-    color: inherit;
-  }
-  .buttons {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-  }
-  .buttons button {
-    background-color: transparent;
-    border: none;
-    color: inherit;
-    font-size: 24px;
-    cursor: pointer;
-  }
-  .options {
-    display: flex;
-    justify-content: space-around;
-  }
-  .options button {
-    background-color: transparent;
-    border: none;
-    color: inherit;
-    font-size: 24px;
-    text-align: center;
-    cursor: pointer;
-    transition: color 0.3s;
-  }
-  .options button.active {
-    color:lightseagreen;
-  }
-  .options button i {
-    font-size: 32px;
-    margin-bottom: 5px;
-  }
- 
-  .modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.7);
-  }
-  .modal-content {
-    background-color: #1e1e1e;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    max-width: 400px;
-    border-radius: 8px;
-    text-align: left;
-    color: inherit;
-  }
-  .close-button {
-    color: #aaa;
-    float: right;
     font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
   }
-  .close-button:hover {
-    color: #f2f3f4;
+
+  .options {
+    max-width: 250px;
   }
-  .modal h2 {
+
+  .options button {
+    font-size: 16px;
+  }
+
+  .options button i {
     font-size: 20px;
-    margin-top: 0;
-    color: inherit;
   }
-  .time-settings {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 10px;
+}
+
+/* For screens between 390px and 844px */
+@media (max-width: 479px) {
+  body {
+    font-size: 18px;
   }
-  .time-settings label {
-    margin-right: 10px;
+
+  .header {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .circle {
+    width: 250px;
+    height: 250px;
+  }
+
+  #time {
+    font-size: 28px;
+  }
+
+  .options {
+    max-width: 250px;
+  }
+
+  .options button {
     font-size: 16px;
-    color: inherit;
-  }
-  .time-settings select {
-    width: 80px;
-    padding: 5px;
-    margin-right: 20px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    background-color: #333;
-    color: #f2f3f4;
-  }
-  body.light .time-settings select {
-    background-color: #f2f3f4;
-    color: #1c1c1c;
-  }
-  #save-settings {
-    display: block;
-    margin: 20px auto 0;
-    padding: 10px 20px;
-    background-color: #4dd0e1;
-    color: #f2f3f4;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  #save-settings:hover {
-    background-color: #4cae4c;
-  }
-  body.light .modal-content {
-    background-color: #f2f3f4;
-    color: #1c1c1c;
-  }
-  body.light .close-button {
-    color: #333;
-  }
-  body.light .modal h2,
-  body.light .time-settings label {
-    color: #1c1c1c;
   }
 
-
-
-
-  @media (max-width: 600px) {
-    .container {
-      width: 100%;
-      padding: 10px;
-    }
-    #timer {
-      margin-bottom: 10px;
-    }
-    .buttons {
-      margin-bottom: 10px;
-    }
-    .header{
-      font-size: 30px;
-    }
+  .options button i {
+    font-size: 20px;
   }
-  
+}
+
+/* For screens between 390px and 844px */
+@media (min-width: 390px) and (max-width: 844px) {
+  .header {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .options {
+    max-width: 350px;
+  }
+}
+
+/* For screens between 393px and 851px */
+@media (min-width: 393px) and (max-width: 851px) {
+  .options {
+    max-width: 300px;
+  }
+}
+
+/* For screens between 414px and 896px */
+@media (min-width: 414px) and (max-width: 896px) {
+  .options {
+    max-width: 350px;
+  }
+}
+
+/* For screens between 375px and 667px */
+@media (min-width: 375px) and (max-width: 667px) {
+  .options {
+    max-width: 300px;
+  }
+}
+
+/* For screens between 360px and 740px */
+@media (min-width: 360px) and (max-width: 740px) {
+  .options {
+    max-width: 280px;
+  }
+}
+
+/* For screens between 412px and 915px */
+@media (min-width: 412px) and (max-width: 915px) {
+  .header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .options {
+    max-width: 350px;
+  }
+}
+
+/* For screens between 540px and 720px */
+@media (min-width: 540px) and (max-width: 720px) {
+  .options {
+    max-width: 400px;
+  }
+
+  .container {
+    max-width: 90%;
+  }
+}
+
+/* For screens between 280px and 653px */
+@media (min-width: 280px) and (max-width: 653px) {
+  .header {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .options {
+    max-width: 250px;
+  }
+}
+
+/* For screens between 412px and 914px */
+@media (min-width: 412px) and (max-width: 914px) {
+  .header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .options {
+    max-width: 350px;
+  }
+}
+
+/* For screens between 1024px and 600px */
+@media (min-width: 1024px) and (max-width: 1280px) and (max-height: 600px) {
+  .header {
+    margin-top: 30px;
+  }
+
+  .container {
+    max-width: 60%;
+  }
+
+  .options {
+    max-width: 500px;
+  }
+}
+
+/* For screens between 1280px and 800px */
+@media (min-width: 1280px) and (max-width: 1920px) and (max-height: 800px) {
+  .header {
+    margin-top: 40px;
+  }
+
+  .container {
+    max-width: 50%;
+  }
+
+  .options {
+    max-width: 600px;
+  }
+}

@@ -1,22 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pomodoro Timer</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet">
 </head>
+
 <body class="dark">
     <div class="container">
         <header>
-            <h1 class="header">POMODORO TIMER</h1>
+            <h1>POMODORO TIMER</h1>
         </header>
         <div id="timer">
             <div class="circle">
-                <svg class="progress-ring" width="200" height="200">
-                    <circle class="progress-ring__circle" stroke="#00FFFF" stroke-width="10" fill="transparent" r="90"
-                        cx="100" cy="100" />
+                <svg class="progress-ring" width="400" height="400" viewBox="0 0 400 400">
+                    <circle class="progress-ring__circle" stroke="#4dd0e1" stroke-width="10" fill="transparent" r="190"
+                     cx="200" cy="200" stroke-dasharray="1188" stroke-dashoffset="1188" /> -->
+                    <defs>
+                        <linearGradient id="GradientCircle" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0%" stop-color="#4dd0e1" />
+                            <stop offset="100%" stop-color="#4d0e98" />
+                        </linearGradient>
+                    </defs>
                 </svg>
                 <span id="time">25:00</span>
             </div>
@@ -29,8 +40,7 @@
             <button id="short-break"><i class="fas fa-smile"></i><br>Short break</button>
         </div>
         <div class="header-icons">
-            <button id="settings-button"><i class="fas fa-cog"></i><br></button>
-            <span class="settings-label"> Set Timer </span>
+            <button id="settings-button" class="setting"><i class="fas fa-cog"></i></button>
         </div>
     </div>
     <!-- Modal Structure -->
@@ -41,32 +51,28 @@
             <div class="time-settings">
                 <label for="work-time">Work</label>
                 <select id="work-time">
-                    <option value="1">1</option>
-                    <option value="5">5</option>
+                    <option value="01">01</option>
+                    <option value="05">05</option>
                     <option value="10">10</option>
                     <option value="15">15</option>
                     <option value="20">20</option>
                     <option value="25">25</option>
-                    <option value="30">30</option>
-                    <option value="35">35</option>
-                    <option value="40">40</option>
-                    <option value="45">45</option>
+                    <option value="30">35</option>
+                    <option value="40">45</option>
                     <option value="50">50</option>
                     <option value="55">55</option>
                     <option value="60">60</option>
                 </select>
                 <label for="break-time">Short break</label>
                 <select id="break-time">
-                    <option value="1">1</option>
-                    <option value="5">5</option>
+                    <option value="01">01</option>
+                    <option value="05">05</option>
                     <option value="10">10</option>
                     <option value="15">15</option>
                     <option value="20">20</option>
                     <option value="25">25</option>
-                    <option value="30">30</option>
-                    <option value="35">35</option>
-                    <option value="40">40</option>
-                    <option value="45">45</option>
+                    <option value="30">35</option>
+                    <option value="40">45</option>
                     <option value="50">50</option>
                     <option value="55">55</option>
                     <option value="60">60</option>
@@ -76,6 +82,11 @@
         </div>
     </div>
     <button id="theme-toggle"><i class="fas fa-sun"></i></button>
+    <audio id="shortBreakSound" loop>
+        <source src="Ketsa - Flix.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
     <script src="script.js"></script>
 </body>
+
 </html>

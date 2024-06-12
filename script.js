@@ -1,17 +1,14 @@
 let workMinutes = localStorage.getItem('workMinutes')
   ? parseInt(localStorage.getItem('workMinutes'))
   : 25;
-
-
 let breakMinutes = localStorage.getItem('breakMinutes')
   ? parseInt(localStorage.getItem('breakMinutes'))
   : 5;
-
-  
 let isRunning = false;
 let isWorkTime = true;
 let remainingSeconds = workMinutes * 60;
 let timer;
+const shortBreakSound = document.getElementById('shortBreakSound');
 const progressCircle = document.querySelector('.progress-ring__circle');
 const radius = progressCircle.r.baseVal.value;
 const circumference = 2 * Math.PI * radius;
@@ -58,11 +55,21 @@ function startTimer() {
         );
         updateProgressCircle(remainingSeconds, remainingSeconds);
         highlightCurrentMode();
-        startTimer(); // Automatically start the next mode
+        startTimer();
+
+        if (!isWorkTime) {
+          shortBreakSound.play();
+        } else {
+          shortBreakSound.pause();
+          shortBreakSound.currentTime = 0; 
+        }
       }
     }, 1000);
     document.getElementById('start-pause').innerHTML =
       '<i class="fas fa-pause"></i>';
+      if (!isWorkTime) {
+        shortBreakSound.play();
+      }   
   }
 }
 function pauseTimer() {
@@ -71,6 +78,9 @@ function pauseTimer() {
     clearInterval(timer);
     document.getElementById('start-pause').innerHTML =
       '<i class="fas fa-play"></i>';
+      if (!isWorkTime) {
+        shortBreakSound.pause();
+      }
   }
 }
 function startShortBreak() {
@@ -81,6 +91,7 @@ function startShortBreak() {
     updateTimerDisplay(breakMinutes, 0);
     updateProgressCircle(breakMinutes * 60, breakMinutes * 60);
     highlightCurrentMode();
+    // shortBreakSound.play(); // Play sound when short break starts
   }
 }
 function startWorkTimer() {
@@ -91,6 +102,8 @@ function startWorkTimer() {
     updateTimerDisplay(workMinutes, 0);
     updateProgressCircle(workMinutes * 60, workMinutes * 60);
     highlightCurrentMode();
+    shortBreakSound.pause(); // Stop sound when work timer starts
+    shortBreakSound.currentTime = 0; // Reset the sound
   }
 }
 function updateTimes() {
@@ -140,7 +153,7 @@ function updateThemeIcon(theme) {
   const themeToggle = document.getElementById('theme-toggle');
   if (theme === 'dark') {
     themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-    themeToggle.style.backgroundColor = '#C3B091';
+    themeToggle.style.backgroundColor = '		#F4C430';
   } else {
     themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
     themeToggle.style.backgroundColor = '#333';
